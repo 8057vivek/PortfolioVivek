@@ -211,6 +211,30 @@ const certifications = [
   // Add more certifications as needed
 ];
 
+/* Achievements section*/
+const achievements = [
+  {
+    id: 1,
+    title: "Top 5 in Hackathon",
+    issuer: "Hackathon Event 2024",
+    date: "October 2024",
+    link: "http://localhost:5500/Practice/Images/InnovXusHackathon.pdf",
+    skills: ["Problem Solving", "Teamwork", "Innovation"],
+    badge: "http://localhost:5500/Practice/Images/InnovXusHackathon.png"
+  },
+  {
+    id: 2,
+    title: "Solved 350+ Leetcode Problems",
+    issuer: "Leetcode",
+    date: "January 2025",
+    link: "https://leetcode.com/u/kaam_kar_Bhai/",
+    skills: ["Algorithms", "Data Structures", "Problem Solving"],
+    badge: "http://localhost:5500/Practice/Images/leetcode.png"
+  },
+  // Add more achievements as needed
+];
+
+
 // ======= SKILLS SECTION =======
 const skillCategoriesDiv = document.getElementById('skill-categories');
 const skillsGrid = document.getElementById('skills-grid');
@@ -375,15 +399,79 @@ function renderCerts() {
 }
 renderCerts();
 
-// ======= CONTACT FORM =======
+// ======= ACHIEVEMENTS SECTION =======
+const achievementGrid = document.getElementById('achievements-grid');
+function renderAchievements() {
+  achievementGrid.innerHTML = '';
+  achievements.forEach((achievement, idx) => {
+    const card = document.createElement('div');
+    card.className = 'achievement-card fade-in';
+    card.innerHTML = `
+      <div class="achievement-container">
+        <div class="achievement-image">
+          ${achievement.badge ? `<img src="${achievement.badge}" alt="badge" class="achievement-badge">` : ''}
+        </div>
+        <div class="achievement-content">
+          <h3 class="achievement-title">${achievement.title}</h3>
+          <div class="achievement-issuer">${achievement.issuer}</div>
+          <div class="achievement-date">${achievement.date}</div>
+          <div class="achievement-skills">
+            ${achievement.skills.map(skill => `<span class="skill">${skill}</span>`).join('')}
+          </div>
+          ${achievement.link ? `<a href="${achievement.link}" target="_blank" class="achievement-link">View Achievement <i data-lucide="external-link"></i></a>` : ''}
+        </div>
+      </div>
+    `;
+    achievementGrid.appendChild(card);
+    setTimeout(() => card.classList.add('visible'), 100 + idx * 100);
+  });
+  lucide.createIcons();
+}
+renderAchievements();
+
+/* contact form*/
+// Initialize EmailJS with your public key
+(function() {
+  emailjs.init("BMn8F8ow6AGx0vBtO");  // Public Key
+})();
+
 const contactForm = document.getElementById('contact-form');
 const toast = document.getElementById('toast');
-contactForm.onsubmit = function(e) {
+
+contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 3000);
-  contactForm.reset();
-};
+
+  // Validate form fields
+  if (!document.getElementById("name").value || !document.getElementById("email").value || !document.getElementById("message").value) {
+    alert("All fields are required.");
+    return;
+  }
+
+  const formData = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+
+  console.log("Form Data: ", formData);  // Debug log
+
+  emailjs.send("service_1zir2r8", "template_pkb8995", formData)
+    .then(function(response) {
+      console.log("SUCCESS!", response.status, response.text);
+
+      // Show toast notification
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+
+      // Reset form
+      contactForm.reset();
+    }, function(error) {
+      console.error("Error details:", error);  // More detailed error log
+      alert("Oops! Something went wrong.");
+    });
+});
+
+
 
 // ======= NAVBAR SCROLLSPY & SMOOTH SCROLL =======
 const navbarBtns = Array.from(document.querySelectorAll('#navbar button'));

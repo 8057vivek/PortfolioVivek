@@ -407,6 +407,117 @@
   }
   .cert-badge { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; margin-left: 1rem;}
   
+  /* achievement section*/
+
+  /* Container for the whole achievement */
+.achievement-card {
+  background: var(--card);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  transition: box-shadow 1s, transform 1s;
+  flex: 1 1 30%; /* This ensures three items per row */
+  box-sizing: border-box;
+}
+
+.achievement-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.achievement-image {
+  flex: 0 0 80px; /* Fixed width for image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.achievement-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-issuer {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.achievement-date {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill {
+  padding: 0.25rem 0.75rem;
+  background: #e0e7ef;
+  color: var(--primary);
+  border-radius: 9999px;
+  font-size: 0.9rem;
+}
+
+.achievement-link {
+  color: var(--primary);
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Add fade-in effect for the cards */
+.achievement-card.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.achievement-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid layout to display 3 items per row */
+#achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible grid */
+  gap: 1.5rem; /* Space between cards */
+}
+
+/* Add responsive behavior */
+@media (max-width: 768px) {
+  #achievements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust for smaller screens */
+  }
+}
+
+  
+  
   /* Contact */
   .contact-grid {
     display: grid;
