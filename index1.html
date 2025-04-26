@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vivek Baghel – Data Analyst Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="container nav-container">
+      <a href="#home" class="logo">Vivek Baghel</a>
+      <nav>
+        <ul id="navbar">
+          <li><button data-target="home" class="active">Home</button></li>
+          <li><button data-target="skills">Skills</button></li>
+          <li><button data-target="projects">Projects</button></li>
+          <li><button data-target="experience">Experience</button></li>
+          <li><button data-target="certifications">Certifications</button></li>
+          <li><button data-target="contact">Contact</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section">
+      <div class="container hero-grid">
+        <!-- Profile Photo Section -->
+        <div class="profile-photo-wrap">
+          <img src="PortfiolioPhoto.jpg" alt="Vivek Baghel profile photo" class="profile-photo">
+          <!-- <div class="badge learning-badge">
+            <span class="badge-dot"></span>
+            Currently Learning
+          </div>
+          <div class="learning-desc">
+            Advanced techniques in predictive analytics and time series forecasting
+          </div> -->
+        </div>
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <h1 class="hero-title">Hi, I'm <span>Vivek Baghel</span></h1>
+          <h2 class="hero-subtitle">Data Analyst | B.Tech CSE | LPU</h2>
+          <p class="hero-desc">
+            Transforming raw data into meaningful insights.<br>
+            Passionate about <b>data visualization</b>, <b>statistical analysis</b>, and <b>machine learning</b> to drive data-informed decisions.
+          </p>
+          <div class="hero-actions">
+            <a href="12211865GeneralResume1.pdf" class="btn cv-button">Download CV <i data-lucide="download"></i></a>
+            <a href="#projects" class="btn btn-outline">View Projects <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/vivek-baghel/" target="_blank" class="social-icon"><i data-lucide="linkedin"></i></a>
+            <a href="https://github.com/8057vivek" target="_blank" class="social-icon"><i data-lucide="github"></i></a>
+            <a href="mailto:baghelvivek061@gmail.com" class="social-icon"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">My Skills</h2>
+        <div id="skill-categories" class="skill-categories"></div>
+        <div id="skills-grid" class="grid skill-grid"></div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div id="projects-grid" class="grid project-grid"></div>
+      </div>
+      <!-- Modal -->
+      <div id="project-modal" class="modal">
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <div id="modal-body"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education Timeline -->
+    <section id="experience" class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div id="certifications-grid" class="grid cert-grid"></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-alt">
+      <div class="container contact-grid">
+        <div>
+          <h3 class="contact-title">Let's Connect</h3>
+          <p class="contact-desc">
+            I'm always interested in new opportunities, collaborations, or just a friendly chat about data science and analytics. Feel free to reach out!
+          </p>
+          <div class="contact-links">
+            <div><i data-lucide="mail"></i> <a href="mailto:baghelvivek0316@gamil.com">vivekbaghel@example.com</a></div>
+            <div><i data-lucide="linkedin"></i> <a href="https://www.linkedin.com/in/vivek-baghel/" target="_blank">linkedin.com/in/vivekbaghel</a></div>
+            <div><i data-lucide="github"></i> <a href="https://github.com/8057vivek" target="_blank">github.com/vivekbaghel</a></div>
+          </div>
+          <div class="hero-socials">
+            <a href="https://linkedin.com/" target="_blank" class="social-icon"><i data-lucide="linkedin"></i></a>
+            <a href="https://github.com/" target="_blank" class="social-icon"><i data-lucide="github"></i></a>
+            <a href="mailto:baghelvivek0316@gmail.com" class="social-icon"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="contact-form-card">
+            <h3>Send a Message</h3>
+            <form id="contact-form" class="contact-form">
+              <label>Name <input id="name" name="name" type="text" required></label>
+              <label>Email <input id="email" name="email" type="email" required></label>
+              <label>Message <textarea id="message" name="message" rows="5" required></textarea></label>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="toast" class="toast">Message sent! Thank you for reaching out. I'll get back to you soon.</div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-row">
+      <div>
+        <h3 class="footer-title">Vivek Baghel</h3>
+        <p>Data Analyst | B.Tech CSE | LPU</p>
+      </div>
+      <div>
+        <a href="https://www.linkedin.com/in/vivek-baghel/" target="_blank" class="social-icon"><i data-lucide="linkedin"></i></a>
+        <a href="https://github.com/8057vivek" target="_blank" class="social-icon"><i data-lucide="github"></i></a>
+        <a href="mailto:baghelvivek0316@gmail.com" class="social-icon"><i data-lucide="mail"></i></a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      &copy; <span id="year"></span> Vivek Baghel. All rights reserved.
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
