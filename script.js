@@ -87,7 +87,7 @@ const projects = [
     title: "Customer Churn Analysis (EDA & ML)",
     shortDescription: "Exploratory data analysis and machine learning to predict customer churn",
     fullDescription: "Performed EDA using Python libraries and built ML models to identify patterns behind customer churn. Decision Trees and Random Forests were applied, and model accuracy was validated using confusion matrices and cross-validation techniques.",
-    thumbnail: "Images/Churn.png",
+    thumbnail: "Images/churn.png",
     techStack: ["Python", "Pandas", "Seaborn", "scikit-learn", "Random Forest"],
     goals: [
       "Identify key reasons behind customer churn",
