@@ -186,9 +186,9 @@ const certifications = [
     title: "Data Structures and Algorithms",
     issuer: "Board Infinity",
     date: "Jun 2024",
-    link: "https://coursera.org/verify/EXAMPLE123",
+    link: "Images/boardInfinity.png",
     skills: ["STL", "Data Structures", "Algorithms", "Logic Building"],
-    badge: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    badge: "Images/boardInfinity.png"
   },
   {
     id: 1,
@@ -197,16 +197,16 @@ const certifications = [
     date: "July 2022",
     link: "https://www.coursera.org/account/accomplishments/verify/5HEEFO0BXB97?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
     skills: ["KPIs", "Visulaization", "Dashboards", "SQL"],
-    badge: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    badge: "Images/TableauCoursera.jpg"
   },
   {
     id: 1,
     title: "Safe and Responsible AI",
     issuer: "NPTEL",
     date: "July 2024",
-    link: "https://coursera.org/verify/EXAMPLE123",
+    link: "Images/NPTEL.png",
     skills: ["AI Ethics", "Privacy", "Bias Mitigation", "Model Governance"],
-    badge: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    badge: "Images/NPTEL.png"
   },
   // Add more certifications as needed
 ];
@@ -373,24 +373,27 @@ renderTimeline();
 
 // ======= CERTIFICATIONS SECTION =======
 const certGrid = document.getElementById('certifications-grid');
+
 function renderCerts() {
   certGrid.innerHTML = '';
   certifications.forEach((cert, idx) => {
     const card = document.createElement('div');
     card.className = 'cert-card fade-in';
     card.innerHTML = `
-      <div style="display:flex;align-items:center;justify-content:space-between;">
-        <div>
-          <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.25rem;">${cert.title}</h3>
-          <div style="color:var(--primary);font-weight:500;">${cert.issuer}</div>
-          <div style="color:#888;font-size:0.95rem;margin-bottom:0.5rem;">${cert.date}</div>
+      ${cert.badge ? `<img src="${cert.badge}" alt="badge" style="width:100%; height:160px; object-fit:fill;">` : ''}
+      <div style="padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+      <div style="width: 100%; height: 3px; background-color: hwb(201 87% 6%); margin-bottom: -0.5rem;"></div>
+
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.25rem;">${cert.title}</h3>
+        <div style="color:var(--primary); font-weight:500;">${cert.issuer}</div>
+        <div style="color:#888; font-size:0.95rem;">${cert.date}</div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">
+          ${cert.skills.map(skill => `<span style="padding:0.25rem 0.75rem; background:#e0e7ef; color:var(--primary); border-radius:9999px; font-size:0.9rem;">${skill}</span>`).join('')}
         </div>
-        ${cert.badge ? `<img src="${cert.badge}" alt="badge" class="cert-badge">` : ''}
+
+        ${cert.link ? `<a href="${cert.link}" target="_blank" style="color:var(--primary); margin-top:0.75rem; font-size:0.95rem; text-decoration:none; display:inline-flex; align-items:center; gap:0.25rem;">View Certificate <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>` : ''}
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-        ${cert.skills.map(skill => `<span style="padding:0.25rem 0.75rem;background:#e0e7ef;color:var(--primary);border-radius:9999px;font-size:0.9rem;">${skill}</span>`).join('')}
-      </div>
-      ${cert.link ? `<a href="${cert.link}" target="_blank" style="color:var(--primary);font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.25rem;">View Certificate <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>` : ''}
     `;
     certGrid.appendChild(card);
     setTimeout(() => card.classList.add('visible'), 100 + idx * 100);
@@ -401,25 +404,24 @@ renderCerts();
 
 // ======= ACHIEVEMENTS SECTION =======
 const achievementGrid = document.getElementById('achievements-grid');
+
 function renderAchievements() {
   achievementGrid.innerHTML = '';
   achievements.forEach((achievement, idx) => {
     const card = document.createElement('div');
     card.className = 'achievement-card fade-in';
     card.innerHTML = `
-      <div class="achievement-container">
-        <div class="achievement-image">
-          ${achievement.badge ? `<img src="${achievement.badge}" alt="badge" class="achievement-badge">` : ''}
+      <div class="achievement-image">
+        ${achievement.badge ? `<img src="${achievement.badge}" alt="Badge">` : ''}
+      </div>
+      <div class="achievement-content">
+        <h3 class="achievement-title">${achievement.title}</h3>
+        <div class="achievement-issuer">${achievement.issuer}</div>
+        <div class="achievement-date">${achievement.date}</div>
+        <div class="achievement-skills">
+          ${achievement.skills.map(skill => `<span class="skill">${skill}</span>`).join('')}
         </div>
-        <div class="achievement-content">
-          <h3 class="achievement-title">${achievement.title}</h3>
-          <div class="achievement-issuer">${achievement.issuer}</div>
-          <div class="achievement-date">${achievement.date}</div>
-          <div class="achievement-skills">
-            ${achievement.skills.map(skill => `<span class="skill">${skill}</span>`).join('')}
-          </div>
-          ${achievement.link ? `<a href="${achievement.link}" target="_blank" class="achievement-link">View Achievement <i data-lucide="external-link"></i></a>` : ''}
-        </div>
+        ${achievement.link ? `<a href="${achievement.link}" class="achievement-link" target="_blank">View Achievement <i data-lucide="external-link"></i></a>` : ''}
       </div>
     `;
     achievementGrid.appendChild(card);
@@ -427,6 +429,7 @@ function renderAchievements() {
   });
   lucide.createIcons();
 }
+
 renderAchievements();
 
 /* contact form*/
