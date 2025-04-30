@@ -478,7 +478,7 @@ contactForm.addEventListener("submit", function (e) {
 
 // ======= NAVBAR SCROLLSPY & SMOOTH SCROLL =======
 const navbarBtns = Array.from(document.querySelectorAll('#navbar button'));
-const sections = ['home','skills','projects','experience','certifications','contact'].map(id => document.getElementById(id));
+const sections = ['home','skills','projects','experience','certifications','achievements','contact'].map(id => document.getElementById(id));
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY + 100;
   let current = 0;
