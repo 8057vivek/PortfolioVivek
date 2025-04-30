@@ -31,7 +31,7 @@ const projects = [
     title: "Adidas Sales & Performance Dashboard",
     shortDescription: "Interactive Power BI dashboard analyzing Adidas sales and performance metrics",
     fullDescription: "Designed an interactive Power BI dashboard to track and analyze Adidas's sales and performance metrics. The dashboard offers real-time data filtering, regional drill-through analysis, KPI tracking, and actionable business insights. DAX measures and optimized ETL pipelines were used for efficient analytics.",
-    thumbnail: "http://localhost:5500/Practice/Images/AdidasDashBoard.png",
+    thumbnail: "Images/AdidasDashBoard.png",
     techStack: ["Power BI", "DAX", "ETL", "Data Modeling"],
     goals: [
       "Provide real-time visibility into Adidas sales trends",
@@ -51,7 +51,7 @@ const projects = [
     github: "https://github.com/8057vivek/Adidas_Sales_Dashboard",
     liveDemo: "https://shorturl.at/fx4ss", // replace with actual if available
     images: [
-      "http://localhost:5500/Practice/Images/AdidasDashBoard.png"
+      "Images/AdidasDashBoard.png"
     ]
   },
   {
@@ -59,7 +59,7 @@ const projects = [
     title: "Ultimate Weather App",
     shortDescription: "A responsive weather web app with real-time updates and forecast features",
     fullDescription: "Developed a sleek weather web application using HTML, CSS, and JavaScript, integrated with the OpenWeatherMap API. Features include live weather, 5-day forecasts, wind/humidity info, city search, and interactive data displays. Deployed using Vercel.",
-    thumbnail: "http://localhost:5500/Practice/Images/WeatherApp.png",
+    thumbnail: "Images/WeatherApp.png",
     techStack: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API", "Vercel"],
     goals: [
       "Deliver real-time weather updates",
@@ -79,7 +79,7 @@ const projects = [
     github: "https://github.com/8057vivek/weather-app",
     liveDemo: "https://weather-app-by-vivek.vercel.app/", // replace with actual if needed
     images: [
-      "http://localhost:5500/Practice/Images/WeatherApp.png"
+      "Images/WeatherApp.png"
     ]
   },
   {
@@ -87,7 +87,7 @@ const projects = [
     title: "Customer Churn Analysis (EDA & ML)",
     shortDescription: "Exploratory data analysis and machine learning to predict customer churn",
     fullDescription: "Performed EDA using Python libraries and built ML models to identify patterns behind customer churn. Decision Trees and Random Forests were applied, and model accuracy was validated using confusion matrices and cross-validation techniques.",
-    thumbnail: "http://localhost:5500/Practice/Images/Churn.png",
+    thumbnail: "Images/Churn.png",
     techStack: ["Python", "Pandas", "Seaborn", "scikit-learn", "Random Forest"],
     goals: [
       "Identify key reasons behind customer churn",
@@ -107,7 +107,7 @@ const projects = [
     github: "https://github.com/8057vivek/Churn_Analysis",
     // liveDemo: "https://example.com/churn-demo", // optional or placeholder
     images: [
-      "http://localhost:5500/Practice/Images/ChurnAnalysis.png"
+      "Images/ChurnAnalysis.png"
     ]
     
   },
@@ -218,9 +218,9 @@ const achievements = [
     title: "Top 5 in Hackathon",
     issuer: "Hackathon Event 2024",
     date: "October 2024",
-    link: "http://localhost:5500/Practice/Images/InnovXusHackathon.pdf",
+    link: "Images/InnovXusHackathon.pdf",
     skills: ["Problem Solving", "Teamwork", "Innovation"],
-    badge: "http://localhost:5500/Practice/Images/InnovXusHackathon.png"
+    badge: "Images/InnovXusHackathon.png"
   },
   {
     id: 2,
@@ -229,7 +229,7 @@ const achievements = [
     date: "January 2025",
     link: "https://leetcode.com/u/kaam_kar_Bhai/",
     skills: ["Algorithms", "Data Structures", "Problem Solving"],
-    badge: "http://localhost:5500/Practice/Images/leetcode.png"
+    badge: "Images/leetcode.png"
   },
   // Add more achievements as needed
 ];
